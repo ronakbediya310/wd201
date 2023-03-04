@@ -1,4 +1,4 @@
-const todoList = () => {
+cconst todoList = () => {
   all = []
   const add = (todoItem) => {
     all.push(todoItem)
@@ -38,7 +38,7 @@ const todoList = () => {
       const iscompleted=item.completed ? "[x]":"[ ]";
      
       const date=
-      item.dueDate===new Date().toLocaleDateString("en-CA")? "":item.dueDate;
+      item.dueDate===new Date().toLocaleDateString("en-CA") ? "": item.dueDate;
       return `${iscompleted} ${item.title.trim()} ${date}`.trim();
 
     })
