@@ -10,36 +10,36 @@ const todoList = () => {
   const overdue = () => {
     // Write the date check condition here and return the array
     // of overdue items accordingly
-    return all.filter((item)=>{
-      return item.dueDate< formattedDate(new Date());
+    return all.filter((todoitem)=>{
+      return todoitem.dueDate< formattedDate(new Date());
     });
 }
 
   const dueToday = () => {
     // Write the date check condition here and return the array
     // of todo items that are due today accordingly.
-    return all.filter((item)=>{
-      return item.dueDate=== formattedDate(new Date());
+    return all.filter((todoitem)=>{
+      return todoitem.dueDate=== formattedDate(new Date());
     });
   }
 
   const dueLater = () => {
     // Write the date check condition here and return the array
     // of todo items that are due later accordingly.
-    return all.filter((item)=>{
-      return item.dueDate>formattedDate(new Date());
+    return all.filter((todoitem)=>{
+      return todoitem.dueDate>formattedDate(new Date());
     });
   }
 
   const toDisplayableList = (list) => {
     // Format the To-Do list here, and return the output string
     // as per the format given above.
-    return list.map((item)=>{
-      const iscompleted=item.completed ? "[x]":"[ ]";
+    return list.map((todoitem)=>{
+      const iscompleted=todoitem.completed ? "[x]":"[ ]";
      
       const date=
-      item.dueDate===new Date().toLocaleDateString("en-CA") ? "": item.dueDate;
-      return `${iscompleted} ${item.title.trim()} ${date}`.trim();
+      todoitem.dueDate===new Date().toLocaleDateString("en-CA") ? "": todoitem.dueDate;
+      return `${iscompleted} ${todoitem.title.trim()} ${date}`.trim();
 
     })
     .join("\n");
