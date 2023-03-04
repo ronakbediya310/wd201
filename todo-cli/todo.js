@@ -1,4 +1,4 @@
-cconst todoList = () => {
+const todoList = () => {
   all = []
   const add = (todoItem) => {
     all.push(todoItem)
