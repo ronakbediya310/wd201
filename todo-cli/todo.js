@@ -19,7 +19,7 @@ const todoList = () => {
     // Write the date check condition here and return the array
     // of todo items that are due today accordingly.
     return all.filter((todoitem)=>{
-      return todoitem.dueDate=== formattedDate(new Date());
+      return todoitem.dueDate === formattedDate(new Date());
     });
   }
 
@@ -27,7 +27,7 @@ const todoList = () => {
     // Write the date check condition here and return the array
     // of todo items that are due later accordingly.
     return all.filter((todoitem)=>{
-      return todoitem.dueDate>formattedDate(new Date());
+      return todoitem.dueDate > formattedDate(new Date());
     });
   }
 
@@ -37,8 +37,8 @@ const todoList = () => {
     return list.map((todoitem)=>{
       const iscompleted=todoitem.completed ? "[x]":"[ ]";
      
-      const date=
-      todoitem.dueDate===new Date().toLocaleDateString("en-CA") ? "": todoitem.dueDate;
+      const date =
+      todoitem.dueDate === new Date().toLocaleDateString("en-CA") ? "": todoitem.dueDate;
       return `${iscompleted} ${todoitem.title.trim()} ${date}`.trim();
 
     })
